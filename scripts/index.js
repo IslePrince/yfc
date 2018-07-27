@@ -2,7 +2,7 @@
 
 function onDeviceReady() { 
  localStorage.setItem("uuid",  JSON.stringify(device.uuid));
-if (navigator.notification) { // Override default HTML alert with native dialog
+	if (navigator.notification) { // Override default HTML alert with native dialog
       window.alert = function (message) {
           navigator.notification.alert(
               message,    // message
@@ -12,6 +12,9 @@ if (navigator.notification) { // Override default HTML alert with native dialog
           );
       };
   }
+
+
+var expired = [];
 
 window.addEventListener("error", handleError, true);
 
@@ -67,7 +70,9 @@ function handleError(evt) {
 });
 	
 // LOGIC
-
+function alertMasses() {
+	alert('masses');	
+}
 	
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

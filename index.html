@@ -99,17 +99,7 @@
         <!-- END Write Down PAGE -->
    <!-- BEGIN Expired PAGE -->
        		<div data-role="page" id="expired"  >
-            <script>
-		$(document).keypress(function(e) {
-			
-			  var keycode = (e.keyCode ? e.keyCode : e.which);
-		
-			  if (keycode == '13') {
-				alert(		$('#expiredCriteria').val());	
-			   
-			  }
-		});
-			</script>
+         
             <!-- START panel left -->
 			<div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
 
@@ -172,6 +162,31 @@
               </div>
             </div>
           <!--  <nd2-include data-src="examples/fragments/footer.html"></nd2-include> -->
+             <script>
+	$('#expiredCriteria').keypress(function(e) {
+			
+			  var keycode = (e.keyCode ? e.keyCode : e.which);
+		
+			  if (keycode == '13') {
+					$.ajax({url: "http://yelmfood.coop/api/",
+					  dataType: "json",
+					  type: "POST",
+					  crossDomain:true,
+					  async: false,
+					  data: {upc: $('#expiredCriteria').val(), action: 'get_product_data_upc_json'},
+					  success: function (result) {	
+						  var productData = result;		
+					
+							$('#expiredList').html(JSON.stringify(productData));
+					  },
+					  error: function (request,error) {	
+						 alert('error getting data');
+					  }
+				  });
+			   
+			  }
+		});
+			</script>
         </div>
         <!-- END Write Down PAGE -->
     
