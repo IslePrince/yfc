@@ -59,8 +59,10 @@ function handleError(evt) {
 				}	
     });
 	
+	alert('test');
+	
 	// LOGIC
-	$('#expiredCriteria').addEventListener("keypress", expiredKeypress, false);
+	$('#expiredCriteria').addEventListener("keydown", expiredKeypress, false);
 	function expiredKeypress(e) {
 		
 		alert(e.which);
