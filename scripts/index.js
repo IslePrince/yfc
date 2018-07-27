@@ -62,6 +62,8 @@ function handleError(evt) {
 	// LOGIC
 	$('#expiredCriteria').addEventListener("keypress", expiredKeypress, false);
 	function expiredKeypress(e) {
+		
+		alert(e.which);
     if(e.which == 13) {
     
 		 $('#expiredCriteria').blur();
