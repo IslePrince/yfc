@@ -66,8 +66,8 @@ function handleError(evt) {
     
 		 $('#expiredCriteria').blur();
 	
-		 //    alert('You pressed enter!' + $('#expiredCriteria').val());
-		 navigator.notification.prompt('This is a message', 'Quantity for X', ['OK', 'Cancel'], '1');
+		   alert('You pressed enter!' + $('#expiredCriteria').val());
+		 prompt('This is a message',  '1');
     }
 });
 	
