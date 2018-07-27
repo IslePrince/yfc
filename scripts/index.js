@@ -33,12 +33,7 @@ function handleError(evt) {
 	  
 alert('test');
 
-	var expired = jQuery.parseJSON(localStorage.getItem('expired'));
-	var damaged = jQuery.parseJSON(localStorage.getItem('damaged'));
-	var spoiled = jQuery.parseJSON(localStorage.getItem('spoiled'));
-	var store = jQuery.parseJSON(localStorage.getItem('store'));
-	var promo = jQuery.parseJSON(localStorage.getItem('promo'));
-	var returned = jQuery.parseJSON(localStorage.getItem('returned'));
+	
 
   
 	
