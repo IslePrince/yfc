@@ -1,5 +1,17 @@
+
+
 function onDeviceReady() { 
  localStorage.setItem("uuid",  JSON.stringify(device.uuid));
+if (navigator.notification) { // Override default HTML alert with native dialog
+      window.alert = function (message) {
+          navigator.notification.alert(
+              message,    // message
+              null,       // callback
+              "YFC", // title
+              'OK'        // buttonName
+          );
+      };
+  }
 
 window.addEventListener("error", handleError, true);
 
@@ -31,7 +43,7 @@ function handleError(evt) {
 		}
 	  });
 	  
-alert('test');
+
 
 	
 
@@ -43,34 +55,18 @@ alert('test');
 	$(document).on("pagebeforeshow", function() {
 				// HOME PAGE LOAD // ENTER NAME and SELECT REGION
 				if($.mobile.activePage.attr("id") === 'expired') {
-					
-				}	
-    });
-	
-	$(document).on("pageshow", function() {
-				// HOME PAGE LOAD // ENTER NAME and SELECT REGION
-				if($.mobile.activePage.attr("id") === 'expired') {
-					 $('#expiredCriteria').focus();
+				
 				}	
     });
 	
 
-	
-	// LOGIC
-	$('#expiredCriteria').addEventListener("keydown", expiredKeypress, false);
-	function expiredKeypress(e) {
-		
-		feedbackInfo(e.which);
-	
-		if(e.which == 13) {
-			 $('#expiredCriteria').blur();
-		
-		   alert('You pressed enter!' + $('#expiredCriteria').val());
- 		   prompt('This is a message',  '1');
-		}
-	}
+
 	
 	
+	
+});
+	
+// LOGIC
 
 	
 function validateEmail(email) {
@@ -133,4 +129,4 @@ function feedbackError(msg) {
 	});
 }
 
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, true);

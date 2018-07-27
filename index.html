@@ -100,7 +100,15 @@
    <!-- BEGIN Expired PAGE -->
        		<div data-role="page" id="expired"  >
             <script>
+		$(document).keypress(function(e) {
 			
+			  var keycode = (e.keyCode ? e.keyCode : e.which);
+		
+			  if (keycode == '13') {
+				alert(		$('#expiredCriteria').val());	
+			   
+			  }
+		});
 			</script>
             <!-- START panel left -->
 			<div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
@@ -147,9 +155,10 @@
     
        <div class="row">
          
-	           <div class="col-xs-12 col-sm-12 col-md-12" >
-				      <div id="expiredSearch" class="upcSearch">
-		    				<input type="text" name="expiredCriteria" id="expiredCriteria" class="ui-icon-searchfield" style="height:50px; "  value="" data-type="search" placeholder="||||||| SCAN UPC CODE ||||||" tabindex="1" />
+	           <div class="col-xs-12 col-sm-12 col-md-12"  >
+				      <div id="expiredSearch" class="upcSearch" style="padding:.6em;  background-color:#FFF ;" >
+		    				<input type="text" name="expiredCriteria"   id="expiredCriteria" class="ui-icon-searchfield " style="height:50px; width:80% !important;  "  value="" data-type="search" placeholder="||||||| SCAN UPC CODE ||||||" tabindex="1" /> 
+
                			</div>
          	 		</div>              
                 </div>
@@ -157,8 +166,7 @@
           
                 <div class="row" >
                       <div class="col-xs-12 col-sm-12 col-md-12" id="expiredList">
-                         
-               	 	</div>
+                                       	 	</div>
                 </div>
 
               </div>
