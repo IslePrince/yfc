@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.wavenetworks.yfc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://cordova.apache.org/ns/1.0">
+    <name>Yelm Food Coop Staff</name>
+    <description>
+       Scanner app for the co-op
+    </description>
+    <author email="jeevan@wavenetworks.com" href="http://wavenetworks.com">
+       Wave Networks L.L.C.
+    </author>
+    <content src="index.html" />
+		<splash src="splash.png" width="320" height="480" />
+	<icon src="icon.png" width="1024" height="1024" />
+    <access origin="*" />
+	 <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
+	 	<preference name="phonegap-version" value="cli-8.0.0" />
+	<preference name="KeyboardDisplayRequiresUserAction" value="false" />
+</widget>

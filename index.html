@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<title>My Hometown Values</title>
+    	<meta name="viewport" content="width=device-width">
+        	<link rel="stylesheet" href="./css/font-awesome.min.css" />
+		<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css" /> 
+		<link rel="stylesheet" href="./css/waves.min.css" />
+		<link rel="stylesheet" href="./css/animate.css" />
+		<link rel="stylesheet" href="./css/nativedroid2.css" />
+        <link rel="stylesheet" href="./css/nativedroid2.color.green.css" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="./scripts/jquery.min.js"></script>
+		<script type="text/javascript" src="./scripts/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="./scripts/waves.min.js"></script>
+     	<script type="text/javascript" src="./scripts/nativedroid2.js"></script>       
+ 		<script type="text/javascript" src="./scripts/index.js"></script> 
+	
+	</head>
+	<body>
+    	
+    
+    
+            <!-- BEGIN Write Down PAGE -->
+       		<div data-role="page" id="home"  >
+            <script>
+			
+			</script>
+            <!-- START panel left -->
+			<div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
+
+				<div class="nd2-sidepanel-profile wow fadeInDown">
+					<img class="profile-background" alt="toolbox_background" src="./images/produce.jpg" />
+					<div class="row">
+					
+						<div class="col-xs-8">
+							<div class="box profile-text">
+								<strong id="personName"></strong>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<ul data-role="listview" data-inset="false">
+					<li data-role="list-divider">Yelm Food Coop Tools</li>
+				</ul>
+		
+				
+					<ul data-role="listview" data-inset="false" data-icon="false">
+                     
+						<li><a href="#expired">Expired<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#damaged">Damaged<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#spoiled">Spoiled<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#store">Store Use<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#promo">Promotion<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#returned">Returned From Customer<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+					
+					</ul>
+			
+			
+			</div>
+			<!-- END panel left -->
+
+            <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <!--   <a href="#schools" class="ui-btn ui-btn-left "><i class="zmdi zmdi-chevron-left"></i></a> -->
+                <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay="0.8s"><i class="zmdi zmdi-menu"></i></a>
+                <h1 >Yelm Food Coop</h1>
+            </div>
+            <div data-role="content" style="padding:0px !important;"  role="main">
+    
+              <div class="row">
+         
+	           <div class="col-xs-12 col-sm-12 col-md-12" id="searchPanel">
+				   
+         	 		</div>              
+                </div>
+             <div style="padding:.6em; margin-top:1em; background-color:#FFF ;" >
+          
+                <div class="row" id="menu">
+                      <div class="col-xs-12 col-sm-12 col-md-12">
+                             <ul id="menu-items" data-role="listview" data-icon="false" class="ui-listview">         
+							<li><a href="#expired" class="ui-btn  waves-effect waves-button">Expired<i class="zmdi zmdi-chevron-right zmd-fw pull-right" style="font-size:28px;"></i> <span class="numberCircle pull-right expiredCount">0</span></a></li>
+                              <li><a href="#damaged" class="ui-btn  waves-effect waves-button">Damaged<i class="zmdi zmdi-chevron-right zmd-fw pull-right" style="font-size:28px;"></i> <span class="numberCircle pull-right damagedCount">0</span></a></li>
+                                <li><a href="#spoiled" class="ui-btn  waves-effect waves-button">Spoilage<i class="zmdi zmdi-chevron-right zmd-fw pull-right" style="font-size:28px;"></i> <span class="numberCircle pull-right spoiledCount">0</span></a></li>
+                                 <li><a href="#store" class="ui-btn  waves-effect waves-button">Store Use<i class="zmdi zmdi-chevron-right zmd-fw pull-right" style="font-size:28px;"></i> <span class="numberCircle pull-right storeCount">0</span></a></li>
+                                 <li><a href="#promo" class="ui-btn  waves-effect waves-button">Promotion<i class="zmdi zmdi-chevron-right zmd-fw pull-right" style="font-size:28px;"></i> <span class="numberCircle pull-right promoCount">0</span></a></li>
+                                 <li><a href="#return" class="ui-btn  waves-effect waves-button">Return From Customer<i class="zmdi zmdi-chevron-right zmd-fw pull-right" style="font-size:28px;"></i> <span class="numberCircle pull-right returnCount">0</span></a></li>
+                             
+                              </ul>
+               	 		</div>
+                </div>
+
+              </div>
+            </div>
+          <!--  <nd2-include data-src="examples/fragments/footer.html"></nd2-include> -->
+        </div>
+        <!-- END Write Down PAGE -->
+   <!-- BEGIN Expired PAGE -->
+       		<div data-role="page" id="expired"  >
+            <script>
+			
+			</script>
+            <!-- START panel left -->
+			<div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
+
+				<div class="nd2-sidepanel-profile wow fadeInDown">
+					<img class="profile-background" alt="toolbox_background" src="./images/produce.jpg" />
+					<div class="row">
+					
+						<div class="col-xs-8">
+							<div class="box profile-text">
+								<strong id="personName"></strong>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<ul data-role="listview" data-inset="false">
+					<li data-role="list-divider">Yelm Food Coop Tools</li>
+				</ul>
+		
+				
+					<ul data-role="listview" data-inset="false" data-icon="false">
+                     
+						<li><a href="#expired">Expired<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#damaged">Damaged<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#spoiled">Spoiled<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#store">Store Use<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#promo">Promotion<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+                        <li><a href="#returned">Returned From Customer<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
+					
+					</ul>
+			
+			
+			</div>
+			<!-- END panel left -->
+
+            <div data-role="header" data-position="fixed" data-tap-toggle="false">
+              <a href="#home" class="ui-btn ui-btn-left "><i class="zmdi zmdi-chevron-left"></i></a> 
+                <a href="#leftpanel" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay="0.8s"><i class="zmdi zmdi-menu"></i></a>
+                <h1 >Expired Product</h1>
+            </div>
+            <div data-role="content" style="padding:0px !important;"  role="main">
+    
+       <div class="row">
+         
+	           <div class="col-xs-12 col-sm-12 col-md-12" >
+				      <div id="expiredSearch" class="upcSearch">
+		    				<input type="text" name="expiredCriteria" id="expiredCriteria" class="ui-icon-searchfield" style="height:50px; "  value="" data-type="search" placeholder="||||||| SCAN UPC CODE ||||||" tabindex="1" />
+               			</div>
+         	 		</div>              
+                </div>
+             <div style="padding:.6em; margin-top:1em; background-color:#FFF ;" >
+          
+                <div class="row" >
+                      <div class="col-xs-12 col-sm-12 col-md-12" id="expiredList">
+                         
+               	 	</div>
+                </div>
+
+              </div>
+            </div>
+          <!--  <nd2-include data-src="examples/fragments/footer.html"></nd2-include> -->
+        </div>
+        <!-- END Write Down PAGE -->
+    
+	</body>
+</html>
