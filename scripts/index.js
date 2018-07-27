@@ -31,7 +31,7 @@ function handleError(evt) {
 		}
 	  });
 	  
-
+alert('test');
 
 	var expired = jQuery.parseJSON(localStorage.getItem('expired'));
 	var damaged = jQuery.parseJSON(localStorage.getItem('damaged'));
@@ -59,7 +59,7 @@ function handleError(evt) {
 				}	
     });
 	
-feedbackInfo('test');
+
 	
 	// LOGIC
 	$('#expiredCriteria').addEventListener("keydown", expiredKeypress, false);
