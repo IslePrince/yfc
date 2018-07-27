@@ -59,20 +59,20 @@ function handleError(evt) {
 				}	
     });
 	
-	alert('test');
+feedbackInfo('test');
 	
 	// LOGIC
 	$('#expiredCriteria').addEventListener("keydown", expiredKeypress, false);
 	function expiredKeypress(e) {
 		
-		alert(e.which);
-    if(e.which == 13) {
-    
-		 $('#expiredCriteria').blur();
+		feedbackInfo(e.which);
 	
+		if(e.which == 13) {
+			 $('#expiredCriteria').blur();
+		
 		   alert('You pressed enter!' + $('#expiredCriteria').val());
-		 prompt('This is a message',  '1');
-    }
+ 		   prompt('This is a message',  '1');
+		}
 	}
 	
 	
