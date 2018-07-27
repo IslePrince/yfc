@@ -60,8 +60,8 @@ function handleError(evt) {
     });
 	
 	// LOGIC
-	
-	$('#expiredCriteria').keypress(function(e) {
+	$('#expiredCriteria').addEventListener("keypress", expiredKeypress, false);
+	function expiredKeypress(e) {
     if(e.which == 13) {
     
 		 $('#expiredCriteria').blur();
@@ -69,7 +69,7 @@ function handleError(evt) {
 		   alert('You pressed enter!' + $('#expiredCriteria').val());
 		 prompt('This is a message',  '1');
     }
-});
+	}
 	
 	
 
