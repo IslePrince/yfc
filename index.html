@@ -159,7 +159,21 @@
                <div class="nd2-card" id="expiredLimbo">
 					<div class="card-title ">					
 						<h3 class="card-primary-title"><span id="expiredName"></span></h3>
-						<h5 class="card-subtitle"><span id="expiredCode"></span> </h5>
+						<h5 class="card-subtitle"><span id="expiredCode"></span> <span id="expiredPrice"></span></h5>
+					</div>
+                    <div class="card-supporting-text">
+                    <label for="upc">Quantity:</label>
+						<input type="text" name="upc" id="upc" class="expiredQuantity" value="1" data-clear-btn="true" placeholder="1">
+ 					</div>
+                    <div class="card-action">
+						<div class="row between-xs">
+							<div class="col-xs-12">
+								<div class="box">
+								
+									<a href="#" class="ui-btn clr-primary ui-btn-inline  waves-effect waves-button waves-effect waves-button">Delete</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
                       
@@ -190,6 +204,10 @@
 						$('#expiredName').html(productData['Description']);
 						$('#expiredCode').html(productData['Code']);
 							$('#expiredLimbo').show();
+							
+							$('#expiredCriteria').val('');
+							$('#expiredCriteria').focus();
+							
 					  },
 					  error: function (request,error) {	
 						 alert('error getting data');
