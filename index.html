@@ -100,45 +100,11 @@
    <!-- BEGIN Expired PAGE -->
        		<div data-role="page" id="expired"  >
          
-            <!-- START panel left -->
-			<div data-role="panel" id="leftpanel" data-display="overlay" data-position-fixed="true" >
-
-				<div class="nd2-sidepanel-profile wow fadeInDown">
-					<img class="profile-background" alt="toolbox_background" src="./images/produce.jpg" />
-					<div class="row">
-					
-						<div class="col-xs-8">
-							<div class="box profile-text">
-								<strong id="personName"></strong>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-				<ul data-role="listview" data-inset="false">
-					<li data-role="list-divider">Yelm Food Coop Tools</li>
-				</ul>
-		
-				
-					<ul data-role="listview" data-inset="false" data-icon="false">
-                     
-						<li><a href="#expired">Expired<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
-                        <li><a href="#damaged">Damaged<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
-                        <li><a href="#spoiled">Spoiled<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
-                        <li><a href="#store">Store Use<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
-                        <li><a href="#promo">Promotion<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
-                        <li><a href="#returned">Returned From Customer<i class="zmdi zmdi-chevron-right zmd-fw pull-right"></i> </a></li>
-					
-					</ul>
-			
-			
-			</div>
-			<!-- END panel left -->
+          
 
             <div data-role="header" data-position="fixed" data-tap-toggle="false">
               <a href="#home" class="ui-btn ui-btn-left "><i class="zmdi zmdi-chevron-left"></i></a> 
-                <a href="#leftpanel" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay="0.8s"><i class="zmdi zmdi-menu"></i></a>
+             
                 <h1 >Expired Product</h1>
             </div>
             <div data-role="content" style="padding:0px !important;"  role="main">
@@ -156,15 +122,7 @@
           
                 <div class="row" >
                       <div class="col-xs-12 col-sm-12 col-md-12" id="expiredList">
-               <div class="nd2-card" id="expiredLimbo">
-					<div class="card-title ">					
-						<h3 class="card-primary-title"><span id="expiredName"></span> <span class="numberCircle pull-right upcCount" onClick="this.innerHTML() = prompt('Qty',this.innnerHTML()">1</span></h3>
-						<h5 class="card-subtitle"><span id="expiredCode"></span> <span id="expiredPrice"></span></h5>
-					</div>
-                    
-                   
-				</div>
-                      
+                  
                       
                       
                       </div>
@@ -189,20 +147,23 @@
 					  success: function (result) {	
 						  var productData = result;		
 					
-					        products[productData['Code']]=productData;
+					     var   products[productData['Code']]=productData;
 							if(expired[productData['Code']]<=1) {
-								expired[productData['Code']]=1;
+						var		expired[productData['Code']]=1;
 							} else {
-								expired[productData['Code']]++;
+						var		expired[productData['Code']]++;
 							}
 							alert(JSON.stringify(expired));
+								if(expired) {
 							$('#expiredList').hide();
 							$('#expiredList').html('');
+						
 							 $.each(expired, function(key, value) {
 								 $("#expiredList").append('<div class="nd2-card"><div class="card-title "><h3 class="card-primary-title">'+ products[key].Description +'<span class="numberCircle pull-right upcCount">'+ value +'</span></h3><h5 class="card-subtitle">'+ key +' ' + products[key].BasePrice + '</h5></div>');
 							 });
+						
 						  $('#expiredList').show();
-							
+								}
 							$('#expiredCriteria').val('');
 							$('#expiredCriteria').focus();
 							
