@@ -147,22 +147,20 @@
 					  success: function (result) {	
 						  var productData = result;		
 					
-					     var   products[productData['Code']]=productData;
-							if(expired[productData['Code']]<=1) {
-						var		expired[productData['Code']]=1;
-							} else {
-						var		expired[productData['Code']]++;
-							}
+					   	    products[productData['Code']]=productData;
+							if(!expired[productData['Code']]) {
+								expired[productData['Code']]=1;
+							} 
 							alert(JSON.stringify(expired));
 								if(expired) {
-							$('#expiredList').hide();
-							$('#expiredList').html('');
+							
+							$('#expiredList').html(' ');
 						
 							 $.each(expired, function(key, value) {
-								 $("#expiredList").append('<div class="nd2-card"><div class="card-title "><h3 class="card-primary-title">'+ products[key].Description +'<span class="numberCircle pull-right upcCount">'+ value +'</span></h3><h5 class="card-subtitle">'+ key +' ' + products[key].BasePrice + '</h5></div>');
+								 $("#expiredList").append('<div class="nd2-card"><div class="card-title "><h3 class="card-primary-title">'+ key +'<span class="numberCircle pull-right upcCount">'+ value +'</span></h3><h5 class="card-subtitle">'+ key +' </h5></div>');
 							 });
 						
-						  $('#expiredList').show();
+				
 								}
 							$('#expiredCriteria').val('');
 							$('#expiredCriteria').focus();
