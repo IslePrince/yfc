@@ -195,6 +195,7 @@
 							} else {
 								expired[productData['Code']]++;
 							}
+							alert(JSON.stringify(expired));
 							$('#expiredList').hide();
 							$('#expiredList').html('');
 							 $.each(expired, function(key, value) {
