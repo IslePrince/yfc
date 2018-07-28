@@ -13,7 +13,7 @@ function onDeviceReady() {
       };
   }
 
-
+var products = [];
 var expired = [];
 
 window.addEventListener("error", handleError, true);
@@ -58,7 +58,7 @@ function handleError(evt) {
 	$(document).on("pagebeforeshow", function() {
 				// HOME PAGE LOAD // ENTER NAME and SELECT REGION
 				if($.mobile.activePage.attr("id") === 'expired') {
-				
+				$('#expiredCriteria').focus();
 				}	
     });
 	

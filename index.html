@@ -188,10 +188,26 @@
 					  data: {upc: $('#expiredCriteria').val(), action: 'get_product_data_upc_json'},
 					  success: function (result) {	
 						  var productData = result;		
-						  
-						$('#expiredName').html(productData['Description']);
-						$('#expiredCode').html(productData['Code']);
-							$('#expiredLimbo').show();
+					
+					        products[productData['Code']]=productData;
+							if(expired[productData['Code']]<=1) {
+								expired[productData['Code']]=1;
+							} else {
+								expired[productData['Code']]=Number(expired[productData['Code']]) + 1;
+							}
+							$('#expiredList').hide();
+							$('#expiredList').val('');
+							 $.each(expired, function(key, value) {
+					 	
+									
+							
+										 $("#expiredList").append('<div class="nd2-card">
+					<div class="card-title ">					
+						<h3 class="card-primary-title">'+ products[key].Description +'<span class="numberCircle pull-right upcCount">'+ value +'</span></h3>
+						<h5 class="card-subtitle">'+ key +' ' + products[key].BasePrice + '</h5>
+					</div>');
+							 });
+						  $('#expiredList').show();
 							
 							$('#expiredCriteria').val('');
 							$('#expiredCriteria').focus();
